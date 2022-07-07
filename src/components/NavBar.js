@@ -2,7 +2,6 @@ import React from "react";
 import { Button, Container, Image, Nav, Navbar } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { authentication, user } from "../Firebase/firebaseConfig";
 import { actionLogoutAsyn } from "../redux/actions/actionLogin";
 
 const NavBars = () => {
@@ -57,7 +56,7 @@ const NavBars = () => {
           </Nav>
         </Container>
         <Nav>
-          <span>Hi! {authentication.currentUser.displayName} </span>
+          <span>Hi! </span>
           <Button
             variant="outline-primary"
             onClick={() => dispatch(actionLogoutAsyn())}
