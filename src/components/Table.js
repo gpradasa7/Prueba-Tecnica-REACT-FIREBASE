@@ -37,6 +37,7 @@ const App = () => {
       dataIndex: "Price",
     },
   ];
+  //-----------------------------------Captura la informacion que viene del arreglo de ingredientes de firebase ------------------------------------
   const dataIng = [];
   const { key } = dataIng;
   let acum = [];
@@ -78,6 +79,8 @@ const App = () => {
       {(acum = (Number(acum) + Number(dataIng[ing].Price)).toFixed(2))}
     </div>
   ));
+
+  //-----------------------------------Pinta la informacion de los ingredientes seleccionados en la seccion antes de dar al boton comprar --------------------
   const TotalDelivery = (Number(acum) + Number(delivery)).toFixed(2);
   const dataDelivery = [];
   selectedRowKeys.map((ing, index) => (
@@ -91,6 +94,8 @@ const App = () => {
       })}
     </div>
   ));
+
+  //--------------Captura la informacion del total a pagar, la cantidad de items seleccionados y el costo del envio --------
   const totalArray = {
     Items: selectedRowKeys.length,
     Subtotal: acum,
@@ -98,6 +103,7 @@ const App = () => {
     totalDelivery: TotalDelivery,
   };
   return (
+    //donde se pinta la informacion que viene de firebase----------------------
     <div>
       <Table
         rowSelection={rowSelection}
